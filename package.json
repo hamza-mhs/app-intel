@@ -1,0 +1,24 @@
+{
+  "name": "app-intel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted app market intelligence from free public sources (AppKittie-style).",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env scripts/start.js",
+    "demo": "node --no-warnings scripts/demo.js",
+    "import:appgoblin": "node --no-warnings scripts/import-appgoblin.js",
+    "snapshot": "node --no-warnings --env-file-if-exists=.env scripts/snapshot.js",
+    "test": "node scripts/test-estimate.js && node --no-warnings scripts/test-opportunity.js && node --no-warnings scripts/test-saas.js",
+    "crawl": "node --no-warnings --env-file-if-exists=.env scripts/crawl.js",
+    "serve": "node --no-warnings --env-file-if-exists=.env server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "google-play-scraper": "^10.1.4",
+    "xz-decompress": "^0.2.3"
+  }
+}

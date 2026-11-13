@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App Intel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="side">
+    <a class="brand" href="#/charts"><span class="logo">◆</span> App Intel</a>
+    <form class="search" id="searchForm" autocomplete="off">
+      <input id="searchInput" type="search" placeholder="Search any app…" aria-autocomplete="list" aria-controls="suggest" />
+      <div id="suggest" class="suggest" role="listbox" hidden></div>
+    </form>
+    <div class="seg wide-seg" id="modeSeg" role="tablist" aria-label="Research mode"><button data-m="apps">Apps</button><button data-m="saas">SaaS</button></div>
+    <nav id="nav">
+      <a href="#/charts" data-v="charts" data-mode="apps">Top charts</a>
+      <a href="#/insights" data-v="insights" data-mode="apps">Categories</a>
+      <a href="#/opps" data-v="opps" data-mode="apps">Worth building</a>
+      <a href="#/appideas" data-v="appideas" data-mode="apps">App ideas</a>
+      <a href="#/catalog" data-v="catalog" data-mode="apps">All apps</a>
+      <a href="#/search" data-v="search" data-mode="apps">Search</a>
+      <a href="#/s-clone" data-v="s-clone" data-mode="saas">Worth cloning</a>
+      <a href="#/s-all" data-v="s-all" data-mode="saas">All SaaS</a>
+      <a href="#/s-problems" data-v="s-problems" data-mode="saas">Problems</a>
+      <a href="#/s-ideas" data-v="s-ideas" data-mode="saas">SaaS ideas</a>
+      <a href="#/s-cats" data-v="s-cats" data-mode="saas">Categories</a>
+      <a href="#/s-complaints" data-v="s-complaints" data-mode="saas">Complaints</a>
+      <a href="#/s-avoid" data-v="s-avoid" data-mode="saas">Avoid</a>
+      <a href="#/s-startups" data-v="s-startups" data-mode="saas">Startups</a>
+      <a href="#/s-sources" data-v="s-sources" data-mode="saas">Sources</a>
+      <a href="#/ads" data-v="ads" data-mode="both">Ad library</a>
+      <a href="#/brand" data-v="brand" data-mode="both">Brand lookup</a>
+      <a href="#/verified" data-v="verified" data-mode="both">Verified MRR</a>
+      <a href="#/tracked" data-v="tracked" data-mode="apps">Tracked</a>
+      <a href="#/sources" data-v="sources" data-mode="apps">Sources</a>
+    </nav>
+    <button class="ghost wide" id="openAssumptions">Estimate assumptions</button>
+    <p class="fine">Estimates are modelled from public signals. Not measured revenue.</p>
+  </aside>
+  <main>
+    <div id="banner"></div>
+    <div id="view"></div>
+  </main>
+
+  <dialog id="assumptions">
+    <form method="dialog" class="dlg">
+      <header><h3>Estimate assumptions</h3><button class="icon" value="close" aria-label="Close">✕</button></header>
+      <p class="muted">Each value is low / mid / high. Changes recompute every number instantly and are saved in this browser.</p>
+      <div id="assumptionFields"></div>
+      <footer><button type="button" class="ghost" id="resetAssumptions">Reset to defaults</button><button value="close">Done</button></footer>
+    </form>
+  </dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
